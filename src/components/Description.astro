@@ -1,0 +1,39 @@
+---
+const { title, texto } = Astro.props;
+---
+<article>
+    <h2>{ title }</h2>
+    <p>{ texto }</p>
+</article>
+
+
+<style>
+
+article{
+    flex: 1;
+    position: relative;
+    background-color: #F0F6FA;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    padding: 20px 24px;
+} 
+article::after{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 4px;
+    height: 100%;
+    content: " ";
+    background-color:#E57820 ;
+}
+h2{
+    font-size: 18px;
+    line-height: 24px;
+}
+p{
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+}
+</style>

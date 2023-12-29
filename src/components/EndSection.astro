@@ -1,0 +1,74 @@
+---
+import Description from "./Description.astro";
+
+---
+<section>
+    <article>
+        <img src="/images/end1.png" alt="" class="img">
+        <Description title="Consultoría en construcción"
+        texto="Te brindamos consultoría experta en construcción, proporcionando asesoramiento estratégico y soluciones personalizadas para proyectos de todo tipo. Nuestro equipo te entregará orientación técnica, gestión de riesgos y análisis detallado para garantizar el éxito y la eficiencia en cada etapa del proceso constructivo."/>
+    </article>
+    <article>
+        <img src="/images/end2.png" alt="" class="img">
+        <Description title="Servicios de demolición" texto="Desde evaluaciones de seguridad hasta la ejecución eficiente de demolición controlada, garantizando la gestión adecuada de residuos y la seguridad del sitio. "/>
+    </article>
+</section>
+
+<style>
+    section{
+        position: relative;
+        display: flex;
+        gap: 16px;
+        align-items: start;
+        justify-content: center;
+        background-color: #E1EBF0;
+        padding-bottom: 80px;
+
+    }
+    article{
+        width: 588px;
+        display: flex;
+        flex-direction: column;
+        gap:16px;
+    }
+    .img{
+        object-fit: cover;
+    }
+
+    @media screen and (width <=820px){
+        article{
+            width: 96%;
+            flex-direction: row;
+        }
+        .img{
+            width: 300px;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        
+            align-items: center;
+        }
+    }
+
+
+    @media screen and  (width <= 450px){
+        article{
+            width: 96%;
+            flex-direction: column;
+        }
+        .img{
+            width: 100%;
+            height: 200px;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        
+            align-items: center;
+        }
+    }
+
+</style>

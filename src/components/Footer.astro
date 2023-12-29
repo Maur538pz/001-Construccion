@@ -1,0 +1,72 @@
+---
+import Contact from "./Contact.astro";
+
+---
+<footer>
+    <div class="cont-g">
+        <img src="/images/logoFooter.png" alt="" class="img">
+        <div class="cont-contac">
+            <Contact title="Teléfono">
+                <span>+51 956 325 745</span>
+            </Contact>
+            <Contact title="Redes sociales">
+                <span class="cont-logos">
+                    <img src="/icons/logo-facebook.svg" alt="">
+                    <img src="/icons/logo-instagram.svg" alt="">
+                    <img src="/icons/logo-linkedin.svg" alt="">
+                </span>
+            </Contact>
+        </div>
+    </div>
+
+</footer>
+<style>
+    footer{
+        background-color: #F0F6FA;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        
+
+    }
+    .img{
+        width: 144px;
+        height: 49px;
+        object-fit: cover;
+    }
+    .cont-contac{
+        display: flex;
+        gap:64px;
+    }
+    .cont-logos{
+        display: flex;
+        gap:32px;
+    }
+    .cont-g{
+        display: flex;
+        padding: 48px 104px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    @media screen and (width <= 820px){
+        .cont-g{
+            padding: 48px 0px;
+            width: 96%;
+        }
+    } 
+    @media screen and  (width <= 450px){
+        footer{
+            height: auto;
+            padding: 48px 0px;
+        }
+        .cont-g{
+            flex-direction: column-reverse;
+            align-items: center;
+            gap:64px;
+
+        }
+        .cont-contac{
+            flex-direction: column;
+        }
+    }
+</style>

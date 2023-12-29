@@ -1,0 +1,43 @@
+---
+
+---
+<div>
+    <ul>
+        <li><img src="/images/carrusel1.png" alt=""></li>
+        <li><img src="/images/carrusel2.png" alt=""></li>
+        <li><img src="/images/carrusel3.png" alt=""></li>
+    </ul>
+</div>
+<style>
+    div{
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+    ul{
+        display: flex;
+        background-color: brown;
+        animation:cambio 12s infinite alternate linear;
+        width: 300%;
+    }
+    li{
+        width: 100%;
+        height: 100%;
+        list-style: none;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @keyframes cambio{
+        0%{margin-left: 0;}
+        30%{margin-left: 0;}
+
+        33%{margin-left: -100%;}
+        63%{margin-left: -100%;}
+
+        66%{margin-left: -200%;}
+        100%{margin-left: -200%;}
+    }
+</style>
