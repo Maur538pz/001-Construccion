@@ -1,8 +1,10 @@
 ---
 import Description from "./Description.astro";
+import FisrtCard from "./FisrtCard.astro";
 ---
+<FisrtCard />
 <div class="main-first">
-    <main>
+    <main class="main">
         <section class="sec-1">
             <h2>Servicios personalizados</h2>
             <div class="div1">
@@ -12,12 +14,12 @@ import Description from "./Description.astro";
                     />
                     <Description title="Mantenimiento general" texto="Ofrecemos servicios integrales de mantenimiento para hogares, cubriendo desde reparaciones básicas hasta renovaciones mayores. Nuestro equipo calificado garantiza la eficiencia y durabilidad de cada arreglo, asegurando la funcionalidad y seguridad de tu hogar."/>
                 </div>
-                <img src="/images/2doview1.png" class="img-section img1">
+                <img src="/images/2doview1.png" class="img-section">
             </div>
         </section>
 
         <section class="sec-2">
-            <img src="/images/2doview2.png" class="img-section img2">
+            <img src="/images/2doview2.png" class="img-section">
             <div class="div1--1">
                 <Description title="Diseño arquitectónico" texto="Diseñamos espacios a medida, fusionando creatividad y funcionalidad para crear ambientes únicos que se adaptan a tus necesidades específicas."
                 />
@@ -35,44 +37,63 @@ import Description from "./Description.astro";
         align-items: center;
         justify-content: ;
         position: relative;
-        padding: 80px 0px;
+        padding: 0px 24px;
+        padding-top: 80px;
+        padding-bottom: 48px;
         background-color: #E1EBF0;
+        box-sizing: border-box;
+        margin: auto;
     }
     h2{
         position: relative;
         font-size: 48px;
+        /*font-size: clamp(32px,2vw + 1rem,48px);*/
         font-style: normal;
         font-weight: 700;
         line-height: 60px; /* 125% */
+        
         letter-spacing: -0.768px;
         color:#272F33;
-        word-wrap: break-word;
-        width: 450px;
+        /*word-wrap: break-word;*/
+        /*width: 450px;*/
         padding-bottom: 16px;
+        text-wrap: balance;
+        align-self: stretch;
+        box-sizing: border-box;
+        padding-right: 50px;
+        height: auto;
+    }
+    .main{
+        width: clamp(320px,90%,1200px);
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap:16px;
     }
     .sec-1{
+        /*height: 150px;*/
         display: flex;
         flex-direction: column;
         gap:16px;
         position: relative;
-        width: 512px;    
+        /*width: 520px; */
+        width: clamp(320px,43.92%,520px);
+        flex-grow: 1;
     }
     .sec-2{
         display: flex;
         flex-direction: column;
         gap:16px;
         position: relative;
-        width: 664px;
+        /*width: 664px; */
+        width: clamp(320px,56.08%,664px);
     }
     .img-section{
-        width: 100%;
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
-    main{
-        display: flex;
-        gap:16px;
-        justify-content: center;
-    }
+
     .div1{
         display: flex;
         flex-direction: column;
@@ -85,42 +106,61 @@ import Description from "./Description.astro";
     }
 
     @media screen and (width <= 820px){
+        .main-first{
+            padding: 48px 20px;
+        }
         h2{
             width: 96%;
         }
         .div1{
             flex-direction: row-reverse;
         }
-        main{
+        .main{
+            width: calc(90% + 48px);
+            /*height: 1200px;*/
             flex-direction: column;
-            align-items: center;
+            /*align-items: center;*/
+            gap: 16px;
         }
         .sec-1 {
-            width: 96%;
+            width: 100%;
+        
         }
         .img-section{
             width: 300px;
+            height: 450px;
         }
         .sec-2{
             flex-direction: row-reverse;
-            width: 96%;
+            width: 100%;
+           
         }
 
     }
 
-    @media screen and (width <=450px){
+    @media screen and (width <=640px){
+        .main-first{
+            height: auto;
+        }
+        .main{
+            height: 100%;
+            align-items: center;
+        }
         .div1{
             flex-direction: column;
         }
         .img-section{
-            width: 100%;
+            width: 80%;
+            margin: auto;
         }
         .sec-2{
-            width: 96%;
-            flex-direction: column;
+            width: 100%;
+            flex-direction: column-reverse;
         }
         .sec-1{
-            width: 96%;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
         }
         h2{
             font-size: 40px;

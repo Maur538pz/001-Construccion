@@ -3,59 +3,81 @@ import Description from "./Description.astro";
 
 ---
 <section>
-    <article>
-        <img src="/images/end1.png" alt="" class="img">
-        <Description title="Consultoría en construcción"
-        texto="Te brindamos consultoría experta en construcción, proporcionando asesoramiento estratégico y soluciones personalizadas para proyectos de todo tipo. Nuestro equipo te entregará orientación técnica, gestión de riesgos y análisis detallado para garantizar el éxito y la eficiencia en cada etapa del proceso constructivo."/>
-    </article>
-    <article>
-        <img src="/images/end2.png" alt="" class="img">
-        <Description title="Servicios de demolición" texto="Desde evaluaciones de seguridad hasta la ejecución eficiente de demolición controlada, garantizando la gestión adecuada de residuos y la seguridad del sitio. "/>
-    </article>
+    <div class="cont-art">
+        <article class="art-1">
+            <img src="/images/end1.png" alt="" class="img">
+            <Description title="Consultoría en construcción"
+            texto="Te brindamos consultoría experta en construcción, proporcionando asesoramiento estratégico y soluciones personalizadas para proyectos de todo tipo. Nuestro equipo te entregará orientación técnica, gestión de riesgos y análisis detallado para garantizar el éxito y la eficiencia en cada etapa del proceso constructivo."/>
+        </article>
+        <article class="art-2">
+            <img src="/images/end2.png" alt="" class="img">
+            <Description title="Servicios de demolición" texto="Desde evaluaciones de seguridad hasta la ejecución eficiente de demolición controlada, garantizando la gestión adecuada de residuos y la seguridad del sitio. "/>
+        </article>
+    </div>
 </section>
 
 <style>
     section{
+        position: relative;
+        width: 100%;
+        height: auto;
         position: relative;
         display: flex;
         gap: 16px;
         align-items: start;
         justify-content: center;
         background-color: #E1EBF0;
-        padding-bottom: 80px;
+        box-sizing: border-box;
+        padding: 32px 24px;
+        /*padding-bottom: 80px;*/
+        margin: auto;
 
     }
+    .cont-art{
+        width: clamp(320px,90%,1200px);
+        height: 100%;
+        display: flex;
+        gap:16px;
+        
+    }
     article{
-        width: 588px;
+        width: calc( 50% - 8px);
         display: flex;
         flex-direction: column;
         gap:16px;
+        background-color: #E1EBF0;
     }
     .img{
+        flex-grow: 1;
         object-fit: cover;
     }
 
     @media screen and (width <=820px){
         article{
-            width: 96%;
+            width: 100%;
+            height: auto;
             flex-direction: row;
         }
         .img{
-            width: 300px;
+            width: clamp(280px,100%,300px);
+
         }
-        section{
+        .cont-art{
+            width: calc(90% + 48px);
             display: flex;
             flex-direction: column;
-            width: 100%;
-        
             align-items: center;
+            justify-content: center;
+        }
+        .art-2{
+            flex-direction: row-reverse;
         }
     }
 
 
-    @media screen and  (width <= 450px){
+    @media screen and  (width <= 640px){
         article{
-            width: 96%;
+            
             flex-direction: column;
         }
         .img{
@@ -68,6 +90,12 @@ import Description from "./Description.astro";
             width: 100%;
         
             align-items: center;
+        }
+        .art-1>.img{
+            display: none;
+        }
+        .art-2{
+            flex-direction: column-reverse;
         }
     }
 

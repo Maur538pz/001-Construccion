@@ -9,13 +9,22 @@ import CarruselImg from "./CarruselImg.astro";
             <button class="button"><span class="button-cont">Contáctanos</span></button>
         </div>
         <div class="img">
-            <!--img src="/images/carrusel1.png" class="image-carrusel"-->
             <CarruselImg />
+            <!--img src="/images/carrusel1.png" alt=""-->
+
         </div>
     </article>
 </div>
 
 <style>
+    /*
+ul{
+    display: flex;
+    height: 100%;
+    width: 300%;
+    background-color: #E1EBF0;
+}
+*/
 .cont-main{
     position: relative;
     width: 100%;
@@ -23,7 +32,6 @@ import CarruselImg from "./CarruselImg.astro";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
 }
 .cont-main::before{
     position: absolute;
@@ -37,32 +45,38 @@ import CarruselImg from "./CarruselImg.astro";
 .card{
     position: relative;
     display: flex;
-    width: 1152px;
-    height: 540px;
+    /*width: 1200px;*/
+    height: 588px;
     background-color: #E1EBF0;
     padding: 24px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px;
+    justify-content: center;
+    align-items: start;
+    margin: 80px 0px;
     gap:24px;
+    width: clamp(320px,90%,1200px);
+    box-sizing: border-box;
+    
 }
 .cont-text{
     position: relative;
-    width:304px;
-    height: 100%;
+    /*width:328px;*/
+    width: clamp(200px,95%,280px);
+    height: calc(100% - 48px);
     display: flex;
     flex-direction: column;
-    align-items: start;
     gap: 40px;
+    padding: 24px;
+    align-items: start;
     justify-content: center;
 }
 .text{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    width: 280px;
-    height: 120px;
-    line-height: 20px
+    /*width: 280px;*/
+    width: clamp(200px,100%,280px);
+    height: auto;
+    line-height: 20px;
 }
 .button{
     position: relative;
@@ -82,9 +96,51 @@ import CarruselImg from "./CarruselImg.astro";
     color: #F0F6FA;
 }
 .img{ 
+    position: relative;
     width: 792px;
     height: 526px;
+    background-color: #E1EBF0;
+    margin: auto;
+    
 }
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (width <=820px){
+    .card{
+        flex-direction: column-reverse;
+        gap: 16px;
+        height: auto;
+    }
+    .cont-text{
+        width:calc(100% - 48px);
+        align-items: end;
+        
+    }
+    .text{
+        width: 100%;
+    }
+    .img{
+        width: calc(100% - 48px);
+        height: max(302px);
+  
+    }
+}
+@media screen and (width <=600px){
+    .img{
+        width: 100%;
+    }
+}
+@media screen and (width <= 360px){
+    .card{
+        width: 100%;
+    }
+}
+
+
 /*
 .image-carrusel{
     width: 100%;
@@ -92,6 +148,11 @@ import CarruselImg from "./CarruselImg.astro";
     object-fit: cover;
 }
 */
+
+
+
+
+/*
 @media screen and (width <= 820px){
     .card{
         width: 598px;
@@ -145,4 +206,5 @@ import CarruselImg from "./CarruselImg.astro";
         width: 100%;
     }
 }
+*/
 </style>

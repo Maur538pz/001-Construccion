@@ -7,17 +7,59 @@
         <li><img src="/images/carrusel2.png" alt=""></li>
         <li><img src="/images/carrusel3.png" alt=""></li>
     </ul>
+    <div class="nav-slider">
+        <div class="slider sl1"></div>
+        <div class="slider sl2"></div>
+        <div class="slider sl3"></div>
+    </div>
 </div>
 <style>
+    
+    .nav-slider{
+        position: relative;
+        height: 14px;
+        
+        display: flex;
+        gap:10px;
+        justify-content: center;
+        align-items: end;
+        z-index: 10;
+    }
+    .slider{
+        position: relative;
+        width: 6px;
+        height: 6px;
+        border-radius: 10px;
+        bottom: 0px;
+        background-color: #B3C3CB;
+    }
+    .sl1{
+        animation: alargar 12s 0s infinite;
+    }
+    .sl2{
+        animation: alargar 12s 4s  infinite;
+    }
+    .sl3{
+        animation: alargar 12s 8s  infinite;
+    }
+
+    @keyframes alargar{
+        0%{width: 6px;}
+        5%{width: 50px;background-color: #849F19;}
+        10%{width: 50px;background-color: #849F19;}
+        30%{width: 6px;}
+    }
     div{
-        overflow: hidden;
-        height: 100%;
+        position: relative;
         width: 100%;
+        overflow:hidden;
+        height: 100%;
     }
     ul{
+        position: relative;
+        height: calc(100% - 14px);
         display: flex;
-        background-color: brown;
-        animation:cambio 12s infinite alternate linear;
+        animation:cambio 12s infinite linear;
         width: 300%;
     }
     li{
@@ -29,6 +71,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;        
     }
     @keyframes cambio{
         0%{margin-left: 0;}

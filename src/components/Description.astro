@@ -10,13 +10,14 @@ const { title, texto } = Astro.props;
 <style>
 
 article{
-    flex: 1;
     position: relative;
     background-color: #F0F6FA;
     display: flex;
     flex-direction: column;
     gap:12px;
     padding: 20px 24px;
+    width: auto;
+    flex-grow: 1;
 } 
 article::after{
     position: absolute;
@@ -30,10 +31,13 @@ article::after{
 h2{
     font-size: 18px;
     line-height: 24px;
+    text-wrap: balance;
 }
 p{
     line-height: 24px;
     font-size: 16px;
     font-weight: 400;
+    text-wrap: pretty;
+    text-align: justify;
 }
 </style>

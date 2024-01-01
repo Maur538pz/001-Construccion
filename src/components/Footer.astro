@@ -4,7 +4,7 @@ import Contact from "./Contact.astro";
 ---
 <footer>
     <div class="cont-g">
-        <img src="/images/logoFooter.png" alt="" class="img">
+        <img src="/icons/logofooter.svg" alt="" class="img">
         <div class="cont-contac">
             <Contact title="Teléfono">
                 <span>+51 956 325 745</span>
@@ -22,11 +22,13 @@ import Contact from "./Contact.astro";
 </footer>
 <style>
     footer{
+        width: 100%;
         background-color: #F0F6FA;
         display: flex;
         justify-content: center;
         position: relative;
-        
+        box-sizing: border-box;
+        padding: 0px 24px;
 
     }
     .img{
@@ -44,8 +46,8 @@ import Contact from "./Contact.astro";
     }
     .cont-g{
         display: flex;
-        padding: 48px 104px;
-        width: 100%;
+        padding: 48px 0px;
+        width: clamp(320px,90%,1200px);
         justify-content: space-between;
     }
     @media screen and (width <= 820px){
@@ -54,10 +56,10 @@ import Contact from "./Contact.astro";
             width: 96%;
         }
     } 
-    @media screen and  (width <= 450px){
+    @media screen and  (width <= 640px){
         footer{
             height: auto;
-            padding: 48px 0px;
+            padding: 48px 20px;
         }
         .cont-g{
             flex-direction: column-reverse;

@@ -1,57 +1,92 @@
 ---
 import FisrtCard from "./FisrtCard.astro";
 ---
-
+<figure class="figure-cont">
+    <div class="img_2">
+    </div>
+</figure>
 <header class="contenedor">
-    <figure class="figure-cont">
-        <img src="./images/residential-house-process-building 3.png" class="img-fond">
-    </figure>
-    <figure class="logo"><img src="./images/Logo.png" alt=""></figure>
+    <figure class="logo"><img src="./icons/logohead.svg" alt=""></figure>
     <h1 class="eslogan">Tu hogar perdura en el tiempo y abraza tu historia con cada uno de sus detalles</h1>
-    <FisrtCard />
 </header>
 
 
 <style>
+
 .contenedor{
-    
-    position: relative;
+    position: sticky;
+    inset: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+}
+.img_2{
+    width: 100%;
+    height: 100%;
+    /*
+    background-image: url('/images/residential-house-process-building 3.jpg');
+    background-size: cover;
+    background-position: center;
+*/
+    background: url('/images/residential-house-process-building 3.jpg'), lightgray -0.223px 0.532px / 100.031% 100.099% no-repeat;
+    background-size:  cover ;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    /*
+    background: linear-gradient(180deg, rgba(172, 178, 181, 0.33) -14.95%, rgba(18, 29, 35, 0.80) 89.27%), url('/images/residential-house-process-building 3.jpg'), lightgray -0.223px 0.532px / 100.031% 100.099% no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-blend-mode: multiply, normal;
+    */
+    box-sizing: border-box;
+    
 }
 .figure-cont{
-    position: relative;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 .img-fond{
-    position: fixed;
+    display: none;
     left: 0px;
     width: 100%;
-    height: 80vh;
+    height: 100%;
     object-fit: cover;
-    z-index: 0;
+    background: linear-gradient(180deg, rgba(172, 178, 181, 0.33) -14.95%, rgba(18, 29, 35, 0.80) 89.27%);
+    background-blend-mode: multiply;
     /*clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0% 80%);*/
-    filter:brightness(70%)
-    
 }
 .logo{
     position: relative;
+    left: calc(100%-60px);
     display:flex;
     justify-content: center;
     color: aliceblue;
     padding: 32px;
+    z-index: 5;
 }
 .eslogan{
     position: relative;
-    width: 80%;
+    left: calc(100%-60px);
+    width: clamp(320px,90%,1200px);
     font-size: 60px;
     text-align: center;
     color: #F0F6FA;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24), 0px var(--spacing-01, 2px) 4px rgba(0, 0, 0, 0.08);
+    z-index: 6;
 }
 
 .text{
     font-size: 100px;
+}
+@media screen and (width <1280px){
+    .eslogan{
+        width: 85%;
+    }
 }
 
 @media screen and (width <=450px){
