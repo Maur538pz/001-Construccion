@@ -10,21 +10,11 @@ import CarruselImg from "./CarruselImg.astro";
         </div>
         <div class="img">
             <CarruselImg />
-            <!--img src="/images/carrusel1.png" alt=""-->
-
         </div>
     </article>
 </div>
 
 <style>
-    /*
-ul{
-    display: flex;
-    height: 100%;
-    width: 300%;
-    background-color: #E1EBF0;
-}
-*/
 .cont-main{
     position: relative;
     width: 100%;
@@ -35,7 +25,7 @@ ul{
 }
 .cont-main::before{
     position: absolute;
-    bottom: 0px;
+    bottom: -0.5px;
     content: " ";
     width: 100%;
     height: 50%;
@@ -45,7 +35,6 @@ ul{
 .card{
     position: relative;
     display: flex;
-    /*width: 1200px;*/
     height: 588px;
     background-color: #E1EBF0;
     padding: 24px;
@@ -59,7 +48,6 @@ ul{
 }
 .cont-text{
     position: relative;
-    /*width:328px;*/
     width: clamp(200px,95%,280px);
     height: calc(100% - 48px);
     display: flex;
@@ -73,7 +61,6 @@ ul{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    /*width: 280px;*/
     width: clamp(200px,100%,280px);
     height: auto;
     line-height: 20px;
@@ -139,72 +126,4 @@ img{
         width: 100%;
     }
 }
-
-
-/*
-.image-carrusel{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-*/
-
-
-
-
-/*
-@media screen and (width <= 820px){
-    .card{
-        width: 598px;
-        height: 396px;
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .text{
-        width: 100%;
-    }
-    .img{
-        
-        width: 558px;
-        height: 212px;
-        flex-grow: 1;  
-
-    }
-    .cont-text{
-        position: relative;
-        height: 116px;
-        width: 558px;
-        flex-grow: 1;
-        align-items: end;
-        gap:24px;
-        justify-content: space-between;
-    }
-    .text{
-        font-size: 14px;
-    }
-}
-@media screen and (width <= 450px){
-    .card{
-        width: 80vw;
-        height: auto;
-    }
-    .cont-text{
-        width: 100%;
-        height: auto;
-        gap:24px
-    }
-    .img{
-        width: 100%;
-    }
-}
-
-@media screen and (width <= 360px){
-    .card{
-        width: 80vw;
-    }
-    .img{
-        width: 100%;
-    }
-}
-*/
 </style>
