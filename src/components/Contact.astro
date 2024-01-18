@@ -2,12 +2,12 @@
 const { title } = Astro.props;
 ---
 <article>
-    <h4>{title}</h4>
+    <strong>{title}</strong>
     <slot  class="entradas"/>
 </article>
 
 <style>
-    h4{
+    strong{
         color:#849F19;
         font-size: 14px;
         font-style: normal;
