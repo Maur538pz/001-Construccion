@@ -1,13 +1,14 @@
 ---
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
+import { Loader } from './Loader'
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <title>Rumnco</title>
-    <meta name="description" content="Rumco, empresa constructora lider en su campo ">
+    <meta name="description" content="Rumco, empresa constructora lider en el rubro">
     <link rel="shortcut icon" href="./icons/rumco.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +18,45 @@ import Footer from "./Footer.astro";
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
   </head>
+  <div class="loader" id="loader">
+    <Loader client:load/> 
+  </div>
   <body>
     <Header />
     <slot />
     <Footer />
   </body>
+  <script>
+		window.onload = function() {
+			const loader = document.getElementById('loader')
+			
+			if(loader){
+				loader.classList.add("hiden")
+			}
+		}
+	</script>
 </html>
+
+<style>
+	.loader{
+		background-color: #F0F6FA;
+		height: 100vh;
+		width: 100%;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    z-index: 20;
+    opacity: 100%;
+    transition: opacity 0.5s ;
+	}
+  .hiden{
+    opacity:0%;
+  }
+  .
+	body{
+		overflow: hidden;
+	}
+</style>
